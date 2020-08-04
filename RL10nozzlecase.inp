@@ -1,0 +1,8 @@
+ problem
+     tp    t,k=   1000.95300         p,bar=   3.94424610E-02 ,
+ react
+     fuel=H2 wt=   3.50000000        t,k=   1000.95300    
+     oxid=O2 wt=   17.5000000        t,k=   1000.95300    
+ output  transport
+     plot cp cond vis pran gamma
+ end
