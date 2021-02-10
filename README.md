@@ -1,3 +1,3 @@
 # heat_exchanger
- the current program 'tries' to sketch the heat transfer in the RL10-A33A nozzle.
- the heat exchange model is in 1D and there are used initial data provided by NASA papers.
+ the current program 'tries' to plot the approximate heat transfer curve in the RL10-A33A nozzle.
+ the heat exchange model is 1D and the initial data come from NASA papers.
