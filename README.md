@@ -26,6 +26,10 @@ This part explains the working steps of the program. After collected all the nec
 * comparing collected NASA data with results
   * plotting of properties vs. nozzle lenght
 
+## Wrapping
+
+The program uses ```NASA CEA``` code for the computation of H2 and main jet properties, it also uses properties data from ```NIST``` for additional needed H2 properties.
+
 ## Results
 
 The results are just a first approximation of the H2 temperature in the cooling jacket. The temperature offset is not acceptable as first approximation of the flow, this is due to the approximations and the fact the 1D model is too simple for this problem.
