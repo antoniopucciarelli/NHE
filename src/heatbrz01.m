@@ -15,6 +15,9 @@ close all
 % option
 option = 1;
 
+% importazione directories
+addpath(..\data\P&Wdata)
+
 % proprietá camera di combustione
 Pc    = 3.278e+6;
 Tc    = 3.222e+3;
