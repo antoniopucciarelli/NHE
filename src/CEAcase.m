@@ -4,6 +4,9 @@ function [cp, visc_misc, k_misc, pr, gamma] = CEAcase(mH2, mO2, T, Pressure)
 % input  -> portata H2, portata O2, T, Pressione
 % output -> Cp, vis, k, Pr, gamma
 % 
+    
+    % analisi del fluido, mi sposto nella directory NASA_CEA
+    cd NASA_CEA/
 
     % scrittura dati relativi miscela in DATAfile
     DATAfile = fopen('DATAfile.txt','w');
@@ -15,11 +18,11 @@ function [cp, visc_misc, k_misc, pr, gamma] = CEAcase(mH2, mO2, T, Pressure)
     
     % chiamata programma generazione file RL10nozzlecase.inp 
     % -> descrizione in file make_case.f95
-    system('make_case.exe');
+    system('./make_case');
     
     % chiamata programma che esegue automaticamente file RL10nozzlecase.inp
     % -> descrizione in file FCEA.f
-    system('FCEA.exe');
+    system('./FCEA');
     
     % chiamata programma che trova il relativo valore di Cp miscela da
     % RL10nozzlecase.plt -> file con i dati necessari allo studio
@@ -51,5 +54,8 @@ function [cp, visc_misc, k_misc, pr, gamma] = CEAcase(mH2, mO2, T, Pressure)
     
     % gamma
     gamma = MISCdata.data(5);
-
+    
+    % main directory
+    cd .. 
+    
 end

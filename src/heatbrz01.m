@@ -16,7 +16,7 @@ close all
 option = 1;
 
 % importazione directories
-addpath(..\data\P&Wdata)
+addpath('../data/')
 
 % proprietá camera di combustione
 Pc    = 3.278e+6;
@@ -153,7 +153,7 @@ for i = 1:len-1
    
 end
 delete(w);
-cd DATA
+cd ../res
 % salvataggio dati risultati
 save('xvec.mat','xvec')
 save('Q_brz.mat','Qvec_brz');
@@ -173,17 +173,17 @@ a = length(Qvec_brz);
 x = xvec(1:a);
 switch(P_option) 
     case dataFILE(1)   
-        cd FIGURES_50
+        cd res/FIGURES_50
     case dataFILE(2)   
-        cd FIGURES_55
+        cd res/FIGURES_55
     case dataFILE(3)   
-        cd FIGURES_60
+        cd res/FIGURES_60
     case dataFILE(4)   
-        cd FIGURES_65
+        cd res/FIGURES_65
     case dataFILE(5)   
-        cd FIGURES_70
+        cd resFIGURES_70
     otherwise
-        cd FIGURES
+        cd res/FIGURES
 end
 figure(31)
 plot(x/abs(x(end)-x(1)),Qvec_brz,'LineWidth',2)
@@ -237,4 +237,7 @@ xticks(0:25:300)
 grid on
 grid minor
 saveas(35,'CPH2_brz','jpg')
-cd ..
+cd ../../src
+
+% eliminazione path
+rmpath('../data/')

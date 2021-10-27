@@ -11,6 +11,9 @@
 %   2) ugello lineare => geom agli estremi dal file NASA
 %
 
+% importazione directories
+addpath('../data/')
+
 close all
 % option
 option = 1;
@@ -198,7 +201,7 @@ for i=1:len-1
 
 end
 delete(w);
-cd DATA
+cd ../res
 % salvataggio dati
 save('xvec.mat','xvec')
 save('Q_std.mat','Qvec');
@@ -221,17 +224,17 @@ a = length(Qvec);
 x = xvec(1:a);
 switch(P_option) 
     case dataFILE(1)   
-        cd FIGURES_50
+        cd res/FIGURES_50
     case dataFILE(2)   
-        cd FIGURES_55
+        cd res/FIGURES_55
     case dataFILE(3)   
-        cd FIGURES_60
+        cd res/FIGURES_60
     case dataFILE(4)   
-        cd FIGURES_65
+        cd res/FIGURES_65
     case dataFILE(5)   
-        cd FIGURES_70
+        cd res/FIGURES_70
     otherwise
-        cd FIGURES
+        cd res/FIGURES
 end
 figure(31)
 plot(x/abs(x(end)-x(1)),Qvec,'LineWidth',2);
@@ -308,4 +311,7 @@ grid on
 grid minor
 title('Prandtl REFERENCE TEMPERATURE')
 saveas(38,'Pr_std','jpg')
-cd ..
+cd ../../src
+
+% eliminazione path
+rmpath('../data/')
